@@ -55,6 +55,11 @@
 			this.optsCount = this.opts.length;
 			this.size = { width : this.dd.width(), height : this.dd.height() };
 			
+			var _this = this;
+			$(window).resize(function(){
+				_this.size = { width : _this.dd.width(), height : _this.dd.height() };
+			});
+			
 			var elName = this.$el.attr( 'name' ), elId = this.$el.attr( 'id' ),
 				inputName = elName !== undefined ? elName : elId !== undefined ? elId : 'cd-dropdown-' + ( new Date() ).getTime();
 
